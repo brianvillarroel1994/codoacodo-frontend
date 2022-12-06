@@ -39,3 +39,13 @@ console.log("la division es" + div)
 
 let valor =  5==5 
 console.log(valor)
+
+document.write("<h1> es un subtitulo  <h1/>") // con esto hago que me aparesca el titulo en la pagiNA
+
+let palabra = "Hola"
+
+console.log( palabra.length)
+
+console.log(palabra.replace("buenas"))
+
+
