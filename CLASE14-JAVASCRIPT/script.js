@@ -32,3 +32,14 @@ let edad2 = parseInt(prompt ("ingresa la segunda edad"))
   }else{
     console.log("no puede ver la pelicula")
   }
+
+  //ver si un numero e spar o impar 
+
+  let num3 = parseInt(prompt("ingrese un valor"))
+
+  if (num3 % 2  == 0 )
+  console.log("es par")
+ else 
+ console.log("es impar")  
+
+//swich se encarga de verificar cada caso 
