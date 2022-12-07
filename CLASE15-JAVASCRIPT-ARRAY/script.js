@@ -77,3 +77,65 @@ console.log(nombres)
  console.log(nombres.join("-")) // con join convertimos los array en una cadena de caracteres , en este caso separado por un guion
  console.log(nombres.join(" ")) // separados por un espacio 
  console.log(nombres.join("\n")) // uno abajo de otro
+
+ // concatenar o unir dos array  
+ let unArray= [1,2,3]
+ let otroArray=[4,5,6] 
+
+unArray.push(unArray)
+console.log(unArray) // aca lo que hacemos en insertar todo el array al final del otro, por loq ue no estaria m uy bien si me lo piden
+
+// la forma correcta es concatenar 
+
+let superArray = unArray.concat(otroArray)
+console.log(superArray)
+
+// ordernar array 
+
+nombres.sort()
+console.log(nombres) // ordena alfabeticamente por definicion
+
+let numeros = [1,2,300,4,5,100,95,98,154]
+ 
+numeros.sort((a,b) => a - b) // 1 si es tru  0 si son iguales -1 si al contrario // ordena de a 2
+console.log(numeros)
+
+// validacion de mail de forma rustica
+
+let mail= "juan@gmail.com" //el mail es una  array de caracteres
+
+for(let i=0 ; i < mail.length ; i++ ) {
+    if(mail[i]=="@"){
+        console.log("es un mail")
+    }
+}
+ // ahora hay una funcion definida para desarroyada que te dice si hay un elemento incluido 
+if(mail.includes("@")){
+    console.log("es un mail")
+}
+
+// como se hacia antes
+let texto = "este es un texto"
+contadorVocales = 0
+for(let i=0 ; i<texto.length ; i++ ){
+    if(texto[i]== ("a") || texto[i]== ("e" )|| texto[i]== ("i")|| texto[i]== ("o")|| texto[i]== ("u")) {
+        contadorVocales++
+    }
+
+}
+console.log(contadorVocales)
+
+
+// como se hace ahora 
+
+let texto1 = "este es un texto"
+contVocales = "aeiou"
+contador1=0
+
+for(let i=0 ; i<texto1.length ; i++ ){
+    if(contVocales.includes(texto1[i])) {
+        contador1++
+    }
+
+}
+console.log(contador1)
