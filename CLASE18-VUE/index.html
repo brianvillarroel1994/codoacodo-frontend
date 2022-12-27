@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+
+    <div id="app">
+
+        <input type="text" v-bind:value="valorBind"> <!--blindeo simple, podemos ver que lo que se escribe en la caja no modifica lo exterior -->
+        <p>{{valorBind}}</p>
+
+        <input type="text" v-model:value="valorModel"> <!--el doble binding (doble baidin ), lo que se escribe en la caja modifica en simultaneo lo exterior-->
+        <p>{{valorModel}}</p>
+           
+        <p>link dinamico</p>
+        <p>ver documentacion de google
+            <a v-bind:href="link"> {{nombrelink}}</a> <!-- con javascript llamaos a apis externas-->
+        </p>
+ <!-- vamos  peidr que te salud y no ingresas tu nombre te pide que lo ingreses-->
+ <p v-if="nombre">
+    Hola {{nombre}}
+ </p>
+ <p v-else>
+    ingrese su nombre
+ </p>
+
+ <input type="text" v-model="nombre">
+
+ <p v-for="t in tecnologias"> <!-- solo va a interpolar la t para la lista por que usamos "t (t seria la la varible) in , asi tomamos los valores de la tecnologia", v-for lo usamos para recorrer listas -->
+    {{t}}
+ </p>
+
+
+ <ul>
+    <li v-for="t in tecnologias"> {{t}} </li>
+ </ul>
+
+
+    </div>
+<!-- --------------------------------------------------->
+
+
+<div>
+<!-- cracion de formulacion en vue-->
+        <form id="formVue"  v-on:submit.prevent="guardarTarea"> <!-- :submit.prevent previene el comportamiento por defecto, si esto la pagiana recarga solo apareciendo y desaparenciendo las palabras que quiero ingresar-->
+            <input type="text" v-model="nuevaTarea">
+            <input type="submit">
+        
+        
+            <ul>
+                <li v-for="tarea in tareas"> {{tarea}} </li>
+            </ul>
+
+
+
+</div>
+
+    
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
