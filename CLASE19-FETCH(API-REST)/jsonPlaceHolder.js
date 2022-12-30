@@ -1,0 +1,1 @@
+/*json place holder es una api que te devuelve posteos */
