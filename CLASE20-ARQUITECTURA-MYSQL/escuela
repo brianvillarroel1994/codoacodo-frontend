@@ -1,0 +1,56 @@
+CREATE TABLE alumnos(
+    id INT NOT NULL AUTO_INCREMENT, /* aca mi id es inclemental se general solo ya que es autoinclmental*/
+    nombre VARCHAR(45) NOT NULL,
+    apellido VARCHAR(45) NOT NULL,
+    PRIMARY KEY(id) /* CON ESTO ASEGURAMOS QUE SEA UNICO EL ID Y NO SE REPITA*/ 
+)
+
+/* DESCRIBE alumnos */ /* CON ESTE COMANDO PODES VER LA DESCRIOPCION DE LA TABLA, COMO ESTA ECHO*/
+
+CREATE TABLE profesores(
+    id_profe INT NOT NULL AUTO_INCREMENT, 
+    nombre VARCHAR(45) NOT NULL,
+    apellido VARCHAR(45) NOT NULL,
+    PRIMARY KEY(id_profe) 
+)
+
+
+INSERT INTO alumnos( nombre , apellido) /*el id no lo ingresamos por que se auto incrementa*/
+VALUES('Hector',' Graff');
+
+INSERT INTO alumnos( nombre , apellido) 
+VALUES('BRIAN',' VILLARROEL');
+
+INSERT INTO alumnos( nombre , apellido) 
+VALUES('MARCK','SOQUENVER ');
+
+
+SELECT * FROM alumnos; 
+
+SELECT * FROM alumnos
+WHERE id!=2 AND apellido= ' VILLARROEL'
+
+SELECT * FROM alumnos
+WHERE id!=2 OR apellido= ' VILLARROEL'
+
+SELECT * FROM alumnos
+WHERE id= (SELECT MAX(id) FROM alumnos)
+
+SELECT MAX(id) FROM alumnos /*SOLO ME TRAE EL ID*/
+
+SELECT Nombre , apellido FROM alumnos
+WHERE apellido LIKE "%EL" ; /* NO ME IMPORTA QUE ALLA ANTES QUIERO QUE TERMINE CON **EL** */
+
+SELECT Nombre , apellido FROM alumnos
+WHERE apellido LIKE "SO%" /*TODO LO QUE EMPIECE CON **SO**/ 
+
+SELECT Nombre , apellido FROM alumnos
+WHERE apellido LIKE "%E%" /*LOS QUE TIENEN UNA *E* EN EL MEDIO */ 
+
+DESCRIBE alumnos /* me describe la estructura de la tabla de alumnos*/
+ UPDATE alumnos SET NOMBRE="MARTIN" /*SETEMAMOS PARA MODIFICAR POR EJEMPLO ACA MODIFICAMOS EL NOMBRE DE MARCK*/
+ WHERE NOMBRE="MARCK" AND ID=3
+
+
+ SELECT NOMBRE, apellido FROM alumnos
+ WHERE apellido LIKE "%EL"
